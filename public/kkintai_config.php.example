@@ -1,0 +1,38 @@
+<?php
+/**
+ * Kurage Kintai の設定。
+ * このファイルを kkintai_config.php にコピーして編集してください(.exampleのままでは読み込まれません)。
+ *
+ * 【この製品の考え方】
+ * 入口のタブレットで顔打刻(照合はサーバーの決定的なコードが正)、打刻は丸めず生データで
+ * 記録し、修正はすべて管理者操作として監査ログに残ります。
+ * 顔の特徴データは個人識別符号(個人情報保護法)——登録時に本人同意を記録し、削除機能があります。
+ */
+
+// ---- 画面 ----
+define('KKINTAI_TITLE',       'Kurage 勤怠システム');
+define('KKINTAI_BRAND_COLOR', '#2c6e49');
+
+// ---- 管理者ログイン ----
+define('KKINTAI_PASSWORD',      '');   // 平文(手軽・本番はHASH推奨)
+define('KKINTAI_PASSWORD_HASH', '');   // php -r "echo password_hash('パスワード', PASSWORD_DEFAULT);"
+
+// ---- 打刻端末(キオスク)トークン ----
+// タブレットで開くURL: https://…/kkintai.php?kiosk=この値
+// 長いランダム文字列を設定。空のままだと打刻端末は使えません。
+define('KKINTAI_KIOSK_TOKEN', '');
+
+// ---- 顔照合 ----
+// しきい値(ユークリッド距離)。小さいほど厳格。0.45〜0.55が目安。
+define('KKINTAI_FACE_THRESHOLD', 0.5);
+
+// ---- 就業ルール ----
+define('KKINTAI_WORK_START',   '09:00'); // 始業(遅刻判定)
+define('KKINTAI_WORK_END',     '18:00'); // 終業(早退判定)
+define('KKINTAI_STANDARD_MIN', 480);     // 所定労働(分)。超過分を残業として集計
+
+// ---- 利用制限 ----
+define('KKINTAI_RATE_PER_HOUR', 240);    // 同一IPの1時間あたり打刻回数上限
+
+// ---- デモモード ----
+define('KKINTAI_DEMO', false);
