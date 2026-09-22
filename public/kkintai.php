@@ -527,6 +527,7 @@ h1 img{width:28px;height:28px;border-radius:50%}
   boot();
 })();
 </script>
+<?php if (($_SERVER['HTTP_HOST'] ?? '') === 'proto.exbridge.jp'): ?><p style="text-align:center;font-size:13px;margin:14px 0;color:#5d6b7a">これはデモです。<a href="https://kappstore.exbridge.jp/app.php?id=f0f56c6e4da881be&amp;ref=kkintai" target="_blank" rel="noopener">この製品をオンプレミスで導入する（商品ページ）</a></p><?php endif; ?>
 </body></html>
 <?php
     exit;
@@ -909,4 +910,5 @@ document.getElementById('capbtn').onclick = async function(){
 <div class="foot">Kurage Kintai — 顔で打刻・丸めない台帳。<?php if (KKINTAI_DEMO): ?>(デモ環境)<?php endif; ?></div>
 </div>
 <?php endif; ?>
+<?php if (($_SERVER['HTTP_HOST'] ?? '') === 'proto.exbridge.jp'): ?><p style="text-align:center;font-size:13px;margin:14px 0;color:#5d6b7a">これはデモです。<a href="https://kappstore.exbridge.jp/app.php?id=f0f56c6e4da881be&amp;ref=kkintai" target="_blank" rel="noopener">この製品をオンプレミスで導入する（商品ページ）</a></p><?php endif; ?>
 </body></html>
