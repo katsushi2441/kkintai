@@ -22,3 +22,5 @@ up public/kkintai_assets/face-api.min.js kkintai_assets/face-api.min.js
 up public/kkintai_assets/kurage_mascot.png kkintai_assets/kurage_mascot.png
 for f in public/kkintai_assets/models/*; do up "$f" "kkintai_assets/models/$(basename "$f")"; done
 echo "published: https://proto.exbridge.jp/kkintai/"
+# デモを検索に載せる（製品が出す noindex を、デモ用の head に置き換える）。配置し直すたびに要る
+/usr/bin/python3 /home/kojima/work/proto_exbridge_jp/scripts/demo_index_head.py kkintai
